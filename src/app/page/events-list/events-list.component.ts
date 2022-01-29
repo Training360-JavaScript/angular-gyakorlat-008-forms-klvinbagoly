@@ -21,7 +21,9 @@ export class EventsListComponent implements OnInit {
   ngOnInit(): void {}
 
   onDelete(event:Event): void {
-     this.eventService.remove(event.id)
+     this.eventService.remove(event.id).subscribe(
+       () => this.router.navigate(['/event'])
+     )
   }
 
 }

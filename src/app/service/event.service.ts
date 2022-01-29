@@ -30,7 +30,7 @@ export class EventService {
   }
 
   create(event: Event): Observable<Event> {
-    return this.http.post<Event>(`${this.eventsUrl}/${event.id}`,
+    return this.http.post<Event>(`${this.eventsUrl}`,
     event);
   }
 

@@ -43015,7 +43015,7 @@ If '${name}' is a directive input, make sure the directive is imported by the cu
           return this.http.patch(`${this.eventsUrl}/${event.id}`, event);
         }
         create(event) {
-          return this.http.post(`${this.eventsUrl}/${event.id}`, event);
+          return this.http.post(`${this.eventsUrl}`, event);
         }
         remove(id) {
           return this.http.delete(`${this.eventsUrl}/${id}`);
@@ -47240,7 +47240,7 @@ If '${name}' is a directive input, make sure the directive is imported by the cu
         ngOnInit() {
         }
         onDelete(event) {
-          this.eventService.remove(event.id);
+          this.eventService.remove(event.id).subscribe(() => this.router.navigate(["/event"]));
         }
       };
       EventsListComponent = __decorateClass([
